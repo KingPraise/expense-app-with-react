@@ -1,47 +1,22 @@
 import React from "react";
 import ExpenseItem from "./ExpenseItem";
-
-const Expenses = () => {
-  const expenses = [
-    {
-      id: "e1",
-      title: "Car Insurance",
-      amount: 294.67,
-      date: new Date(2021, 2, 28),
-    },
-    {
-      id: "e2",
-      title: "Toilet Paper",
-      amount: 94.12,
-      date: new Date(2020, 7, 14),
-    },
-    {
-      id: "e3",
-      title: "New Desk (Wooden)",
-      amount: 450,
-      date: new Date(2021, 5, 12),
-    },
-    {
-      id: "e4",
-      title: "New TV",
-      amount: 799.49,
-      date: new Date(2021, 2, 28),
-    },
-  ];
+import "./Expenses.css";
+import Card from "./Card";
+const Expenses = (props) => {
+ 
   return (
-    <div>
-      <h2>Let's get started!</h2>
+    <Card className="expenses">
       <ExpenseItem
-        title={expenses[0].title}
-        amount={expenses[0].amount}
-        date={expenses[0].date}
+        title={props.items[0].title}
+        amount={props.items[0].amount}
+        date={props.items[0].date}
       />
       <ExpenseItem
-        title={expenses[1].title}
-        amount={expenses[1].amount}
-        date={expenses[1].date}
+        title={props.items[1].title}
+        amount={props.items[1].amount}
+        date={props.items[1].date}
       />
-    </div>
+    </Card>
   );
 };
 
