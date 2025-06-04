@@ -28,11 +28,24 @@ const App = () => {
       date: new Date(2021, 2, 28),
     },
   ];
+
+  // Function to handle new expense data
+  // This function receives an 'expense' object as a parameter, which should have the following structure:
+  // {
+  //   id: string,
+  //   title: string,
+  //   amount: number,
+  //   date: Date
+  // }
+  const addExpenseHandler = (expense) => {
+    console.log("In App.js");
+    console.log(expense); // This will log the expense data from the NewExpense component
+  };
   return (
-    <div>
-      <NewExpense />
+    <>
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
-    </div>
+    </>
   );
 };
 
